@@ -25,8 +25,9 @@ io.on("connection", (socket) => {
 });
 
 // importing the userRouter
-const userRouter = require("./routers/userRouter");
-const productRouter = require("./routers/productRouter");
+const UserRouter = require("./routers/UserRouter");
+const ComponentRouter = require("./routers/ComponentRouter");
+const UtilRouter = require("./routers/Util");
 const cors = require("cors");
 
 // middleware to convert client json data to
@@ -35,9 +36,10 @@ app.use(express.json());
 // for allowing frontend request
 app.use(cors({ origin: ["http://localhost:3000"] }));
 
-app.use("/user", userRouter);
+app.use("/user", UserRouter);
 
-app.use("/product", productRouter);
+app.use("/component", ComponentRouter);
+app.use("/util", UtilRouter);
 
 app.get("/add", (req, res) => {
   res.send("request at index");
