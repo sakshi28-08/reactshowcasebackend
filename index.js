@@ -54,6 +54,8 @@ app.get("/home", (req, res) => {
   res.send("another route for home");
 });
 
+app.use(express.static('./uploads'))
+
 // starting the server
 httpServer.listen(port, () => {
   console.log("server started");

@@ -31,7 +31,7 @@ router.get("/getall", (req, res) => {
     .catch((err) => {
       console.error(err);
       res.json(err);
-    });
+    }); 
 });
 
 router.delete("/delete/:id", (req, res) => {
@@ -71,7 +71,7 @@ router.post( '/authenticate', (req, res) => {
       res.status(300).json({loginStatus : false})
     }
   }).catch((err) => {
-    console.error(err);
+    console.error(err)  ;
     res.json(err);
   });
 })
